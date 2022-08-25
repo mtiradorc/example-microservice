@@ -1,8 +1,8 @@
 spring:
   application:
-    name: customer-service
+    name: ms-cliente-example
   cloud:
     config:
-      uri: http://192.168.1.9:8081
+      uri: http://localhost:8081
       username: root
       password: s3cr3t
