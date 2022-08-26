@@ -24,6 +24,7 @@ public class loginController {
     public ResponseEntity<?> allUser (){
         Map<String, Object> param = new HashMap<>();
         List<UserDto> usersDto = loginService.listAll();
+        param.put("usuario", usersDto);
         return new ResponseEntity<Object>(param, HttpStatus.OK);
     }
 }
