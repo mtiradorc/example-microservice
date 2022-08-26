@@ -14,20 +14,20 @@ public class ClienteDto {
     public static final String TABLE_NAME= "CLIENTE";
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "id")
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "APELLIDO")
+    @Column(name = "apellido")
     private String apellido;
 
-    @Column(name = "CREATE_AT")
+    @Column(name = "create_at")
     private Date create_at;
 
-    @Column(name = "EMAIL")
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "NOMBRE")
+    @Column(name = "nombre")
     private String nombre;
 
 
