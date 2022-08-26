@@ -11,7 +11,8 @@ import javax.persistence.*;
 @Table(name = UserDto.TABLE_NAME)
 public class UserDto {
 
-    public static final String TABLE_NAME= "usuario";
+    public static final String TABLE_NAME= "USUARIO";
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
