@@ -21,7 +21,7 @@ public class loginController {
     private loginService loginService;
 
     @GetMapping("/user")
-    public ResponseEntity<?> allUser (){
+    public ResponseEntity<Object> allUser (){
         Map<String, Object> param = new HashMap<>();
         List<UserDto> usersDto = loginService.listAll();
         param.put("usuario", usersDto);

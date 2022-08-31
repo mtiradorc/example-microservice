@@ -1,13 +1,16 @@
 use db_springboot_backend;
 
-CREATE TABLE `cliente` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `apellido` VARCHAR(255) DEFAULT NULL,
-  `create_at` DATE DEFAULT NULL,
-  `email` VARCHAR(255) NOT NULL,
-  `nombre` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `UK_1C96WV36RK2HWUI7QHJKS3MVG` (`email`)
+CREATE TABLE cliente (
+  id BIGINT NOT NULL AUTO_INCREMENT,
+  apellido VARCHAR(255) DEFAULT NULL,
+  create_at DATE DEFAULT NULL,
+  email VARCHAR(255) NOT NULL,
+  nombre VARCHAR(255) NOT NULL,
+  id_usuario BIGINT,
+  PRIMARY KEY (ID),
+  CONSTRAINT uk_email_cliente UNIQUE KEY  (email),
+  CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario)
+  REFERENCES usuario (id)
 ) ;
 
 INSERT INTO cliente (nombre, apellido, email, create_at) VALUES('Andrés', 'Guzmán', 'profesor@bolsadeideas.com', '2018-01-01');
