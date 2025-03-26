@@ -23,7 +23,7 @@ public class ApiController {
     private clienteService clienteService;
 
     @GetMapping("/cliente")
-    public ResponseEntity<?>  allClient (){
+    public ResponseEntity<Object>  allClient (){
         Map<String, Object> param = new HashMap<>();
         List<ClienteDto> clienteDto = clienteService.listAll();
         param.put("cliente", clienteDto);
@@ -32,14 +32,14 @@ public class ApiController {
     }
 
     @GetMapping("/cliente/{id}")
-    public ResponseEntity<?>  clienteById (@PathVariable Long id){
+    public ResponseEntity<Object>  clienteById (@PathVariable Long id){
         Map<String, Object> param = new HashMap<>();
         try {
             ClienteDto clienteDto = clienteService.clienteById(id);
             param.put("cliente", clienteDto);
 
         }catch (Exception e){
-
+            e.fillInStackTrace();
         }
 
         return new ResponseEntity<Object>(param, HttpStatus.OK);
